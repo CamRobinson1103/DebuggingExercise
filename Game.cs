@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Transactions;
 
 namespace HelloWorld
 {
@@ -12,16 +13,15 @@ namespace HelloWorld
         int _playerDamage = 20;
         int _playerDefense = 10;
         int levelScaleMax = 5;
-        char input;
         //Run the game
         public void Run()
         {
 
             while (_gameOver == false)
             {
-               
-
+                Update();
             }
+            End();
 
         }
         //This function handles the battles for our ladder. roomNum is used to update the our opponent to be the enemy in the current room. 
