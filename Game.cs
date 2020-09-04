@@ -73,7 +73,7 @@ namespace HelloWorld
 
                 //Get input from the player
                 char input = ' ';
-                GetInput(out input, "Attack", "Defend");
+                GetInput(out input, "Defend", "What will you do?");
                 //If input is 1, the player wants to attack. By default the enemy blocks any incoming attack
                 if (input == '1')
                 {
