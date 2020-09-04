@@ -16,7 +16,7 @@ namespace HelloWorld
         //Run the game
         public void Run()
         {
-
+            Start();
             while (_gameOver == false)
             {
                 Update();
