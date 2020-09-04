@@ -13,6 +13,7 @@ namespace HelloWorld
         int _playerDamage = 20;
         int _playerDefense = 10;
         int levelScaleMax = 5;
+        char input;
         //Run the game
         public void Run()
         {
@@ -73,13 +74,12 @@ namespace HelloWorld
 
                 //Get input from the player
                 char input = ' ';
-                GetInput(out input, "Defend", "What will you do?");
                 //If input is 1, the player wants to attack. By default the enemy blocks any incoming attack
                 if (input == '1')
                 {
-                    BlockAttack(enemyHealth, _playerDamage, enemyDefense);
-                    Console.WriteLine("You dealt " + _playerDamage + " damage.");
-                    Console.Write("> ");
+                    enemyHealth -= _playerDamage;
+                    Console.WriteLine("You dealt " + _playerDamage + "damage.");
+                    Console.WriteLine("> ");
                     Console.ReadKey();
                 }
                 //If the player decides to defend the enemy just takes their turn. However this time the block attack function is
@@ -132,7 +132,7 @@ namespace HelloWorld
         //Gets input from the player
         //Out's the char variable given. This variables stores the player's input choice.
         //The parameters option1 and option 2 displays the players current chpices to the screen
-        void GetInput(out char input, string option1, string option2)
+         void GetInput(out char input, string option1, string option2)
         {
             //Initialize input
             input = ' ';
@@ -142,6 +142,7 @@ namespace HelloWorld
             Console.WriteLine("2." + option2);
             Console.Write("> ");
             input = Console.ReadKey().KeyChar;
+            return;
         }
 
         //Prints the stats given in the parameter list to the console
