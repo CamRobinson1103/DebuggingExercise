@@ -134,19 +134,53 @@ namespace HelloWorld
             _playerDamage *= scale;
             _playerDefense *= scale;
 
-            void UpgradeShop(int mantra)
+            void UpgradeShop(string item1, int mantra1int, string item2, int mantra2int, string item3, int mantra3int)
             {
-                Console.WriteLine("You enter a mantra shop which sells stat boosting items.");
-                Console.WriteLine("Which mantra do you want?");
-                Console.WriteLine("[1] Bija Mantra");
-                Console.WriteLine("[2] Sauna Mantra");
-                Console.WriteLine("[3] Nirguna Mantra");
-                //Setting up items that boost stats
-                char input = ' ';
-                if (input == '1')
+                bool exit = false;
+                while (exit == false)
                 {
+                    Console.Clear();
+                    Console.WriteLine("You enter a mantra shop which sells stat boosting items.");
+                    Console.WriteLine("Which mantra do you want?");
+                    Console.WriteLine("[1] Bija Mantra (Boost Health)");
+                    Console.WriteLine("[2] Saguna Mantra (Boost Damage)");
+                    Console.WriteLine("[3] Nirguna Mantra (Boost Defence)");
+                    //Setting up items that boost stats
+                    char input = ' ';
+                    input = Console.ReadKey().KeyChar;
+                    if (input == '1')
+                    {
+                        _playerHealth += mantra1int;
+                        Console.WriteLine("You have obtained the Bija Mantra");
+                        Console.ReadKey();
+                        Console.Clear();
+                        exit = true;
+                    }
+                    else if (input == '2')
+                    {
+                        _playerDefense += mantra2int;
+                        Console.WriteLine("You have obtained the Saguna Mantra");
+                        Console.ReadKey();
+                        Console.Clear();
+                        exit = true;
+                    }
+                    else if (input == '2')
+                    {
+                        _playerDamage += mantra3int;
+                        Console.WriteLine("You have obtained the Nirguna Mantra");
+                        Console.ReadKey();
+                        Console.Clear();
+                        exit = true;
+                    }
+                    else if (input != '1' && input != '2' && input != '3')
+                    {
+                        Console.WriteLine("Please choose a mantra");
+                        Console.ReadKey();
+                        exit = false;
+                    }
 
                 }
+               
             }
 
 
