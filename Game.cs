@@ -224,7 +224,10 @@ namespace HelloWorld
             Console.WriteLine("Damage: " + damage);
             Console.WriteLine("Defense: " + defense);
         }
+        void printStats(Player player1)
+        {
 
+        }
         //This is used to progress through our game. A recursive function meant to switch the rooms and start the battles inside them.
         void ClimbLadder(int roomNum)
         {
