@@ -13,7 +13,6 @@ namespace HelloWorld
         int _playerDamage = 8001;
         int _playerDefense = 10;
         int levelScaleMax = 5;
-        char input;
         //Run the game
         public void Run()
         {
@@ -133,8 +132,9 @@ namespace HelloWorld
             _playerHealth += 10 * scale;
             _playerDamage *= scale;
             _playerDefense *= scale;
+        }
 
-            void UpgradeShop(string item1, int magatama1int, string item2, int magatama2int, string item3, int magatama3int)
+        void UpgradeShop(string item1, int magatama1int, string item2, int magatama2int, string item3, int magatama3int)
             {
                 bool exit = false;
                 while (exit == false)
@@ -150,7 +150,7 @@ namespace HelloWorld
                     input = Console.ReadKey().KeyChar;
                     if (input == '1')
                     {
-                        _playerHealth += magatama1int;
+                        _playerDefense += magatama2int;
                         Console.WriteLine("You have obtained the Blue Magatama");
                         Console.ReadKey();
                         Console.Clear();
@@ -158,7 +158,7 @@ namespace HelloWorld
                     }
                     else if (input == '2')
                     {
-                        _playerDefense += magatama2int;
+                        _playerHealth += magatama1int;
                         Console.WriteLine("You have obtained the Red Magatama");
                         Console.ReadKey();
                         Console.Clear();
@@ -187,7 +187,7 @@ namespace HelloWorld
 
 
 
-        }
+      
         //Gets input from the player
         //Out's the char variable given. This variables stores the player's input choice.
         //The parameters option1 and option 2 displays the players current chpices to the screen
@@ -317,6 +317,7 @@ namespace HelloWorld
         public void Start()
         {
             SelectCharacter();
+
         }
 
         //Repeated until the game ends
