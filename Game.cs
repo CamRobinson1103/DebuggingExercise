@@ -5,6 +5,15 @@ using System.Transactions;
 
 namespace HelloWorld
 {
+    struct Player
+    {
+        public int health;
+        public float speed;
+        public bool datDood;
+        public string name;
+        public int defense;
+        public int damage;
+    }
     class Game
     {
         bool _gameOver = false;
@@ -12,6 +21,7 @@ namespace HelloWorld
         int _playerHealth = 120;
         int _playerDamage = 8001;
         int _playerDefense = 10;
+        Player player1;
         int levelScaleMax = 5;
         //Run the game
         public void Run()
@@ -67,7 +77,7 @@ namespace HelloWorld
             }
 
             //Loops until the player or the enemy is dead
-            while (_playerHealth > 0 && enemyHealth > 0)
+            while (player1.health > 0 && enemyHealth > 0)
             {
                 //Displays the stats for both charactersa to the screen before the player takes their turn
                 PrintStats(_playerName, _playerHealth, _playerDamage, _playerDefense);
@@ -273,26 +283,26 @@ namespace HelloWorld
                 {
                     case '1':
                         {
-                            _playerName = "Sir Kibble";
-                            _playerHealth = 120;
-                            _playerDefense = 10;
-                            _playerDamage = 8001;
+                            player1.name = "Sir Kibble";
+                            player1.health = 120;
+                            player1.defense = 10;
+                            player1.damage = 8001;
                             break;
                         }
                     case '2':
                         {
-                            _playerName = "Gnojoel";
-                            _playerHealth = 40;
-                            _playerDefense = 2;
+                            player1.name = "Gnojoel";
+                            player1.health = 40;
+                            player1.defense = 2;
                             _playerDamage = 8001;
                             break;
                         }
                     case '3':
                         {
-                            _playerName = "Joedazz";
-                            _playerHealth = 200;
-                            _playerDefense = 5;
-                            _playerDamage = 8001;
+                            player1.name = "Joedazz";
+                            player1.health = 200;
+                            player1.defense = 5;
+                            player1.damage = 8001;
                             break;
                         }
                     //If an invalid input is selected display and input message and input over again.
@@ -340,3 +350,4 @@ namespace HelloWorld
         }
     }
 }
+
