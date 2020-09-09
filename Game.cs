@@ -151,7 +151,7 @@ namespace HelloWorld
                     if (input == '1')
                     {
                         _playerHealth += magatama1int;
-                        Console.WriteLine("You have obtained the Bija Mantra");
+                        Console.WriteLine("You have obtained the Blue Magatama");
                         Console.ReadKey();
                         Console.Clear();
                         exit = true;
@@ -159,7 +159,7 @@ namespace HelloWorld
                     else if (input == '2')
                     {
                         _playerDefense += magatama2int;
-                        Console.WriteLine("You have obtained the Saguna Mantra");
+                        Console.WriteLine("You have obtained the Red Magatama");
                         Console.ReadKey();
                         Console.Clear();
                         exit = true;
@@ -167,7 +167,7 @@ namespace HelloWorld
                     else if (input == '2')
                     {
                         _playerDamage += magatama3int;
-                        Console.WriteLine("You have obtained the Nirguna Mantra");
+                        Console.WriteLine("You have obtained the Yellow Magatama");
                         Console.ReadKey();
                         Console.Clear();
                         exit = true;
